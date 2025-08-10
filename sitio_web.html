@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>panel de control</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sitio_web.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="script.js" defer></script>
+    <script src="sitio_web.js" defer></script>
 </head>
 <body>
     <!----------------------------------->
@@ -30,7 +30,9 @@
     <nav class="sidebar" id="sidebar">
         <ul>
             <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-globe"></i> Sitio Web</a></li>
             <li><a href="#"><i class="fas fa-file-alt"></i> Página</a></li>
+            <li><a href="#"><i class="fas fa-sitemap"></i> Menu</a></li>
             <li><a href="#"><i class="fas fa-images"></i> Carrusel</a></li>
             <li><a href="#"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
             <li><a href="#"><i class="fas fa-star"></i> Calificaciones</a></li>
@@ -46,37 +48,39 @@
         </ul>
     </nav>
     <div class="contenedor_gris"></div>
-    <!------------------------------>
-    <!--|estructura_pie_de_pagina|-->
-    <!------------------------------>
-    <footer class="footer">
-        <div class="footer-contenedor">
-            <div class="footer-seccion">
-                <h3>Sobre Nosotros</h3>
-                <p>Somos una tienda online dedicada a ofrecer los mejores productos con calidad y confianza.</p>
+    <!-------------------------------->
+    <!--|estructura_crear_sitio_web|-->
+    <!-------------------------------->
+    <div class="contenedor-formulario">
+        <h2>Crear Sitio Web</h2>
+        <form id="formSitioWeb" class="form-grid">
+            <div class="form-group">
+                <label for="nombreSitio">Nombrar el sitio web:</label>
+                <input type="text" id="nombreSitio" name="nombreSitio" placeholder="Escribe el nombre..." required>
             </div>
-            <div class="footer-seccion">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
+            <div class="form-group">
+                <label for="paginaPrincipal">Seleccionar la página:</label>
+                <select id="paginaPrincipal" name="paginaPrincipal" required>
+                    <option value="" disabled selected>Seleccione una página</option>
+                    <option value="inicio">Inicio</option>
+                    <option value="productos">Productos</option>
+                    <option value="contacto">Contacto</option>
+                </select>
             </div>
-            <div class="footer-seccion">
-                <h3>Síguenos</h3>
-                <div class="redes">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
+            <div class="form-group">
+                <label for="descripcionSitio">¿De qué se tratará el sitio web?</label>
+                <textarea id="descripcionSitio" name="descripcionSitio" rows="3" placeholder="Describe el sitio..." required></textarea>
             </div>
-        </div>
-        <div class="footer-derechos">
-            <p>&copy; 2025 Masomy. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+            <div class="form-group">
+                <label for="sesionSitio">Seleccionar la sesión:</label>
+                <select id="sesionSitio" name="sesionSitio" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="publico">Público</option>
+                    <option value="privado">Privado</option>
+                </select>
+            </div>
+            <button type="submit" id="btnCrearSitio">Crear Sitio Web</button>
+        </form>
+    </div>
 </body>
 </html>

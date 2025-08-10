@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>panel de control</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu_navegacion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="script.js" defer></script>
+    <script src="menu_navegacion.js" defer></script>
 </head>
 <body>
     <!----------------------------------->
@@ -30,7 +30,9 @@
     <nav class="sidebar" id="sidebar">
         <ul>
             <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-globe"></i> Sitio Web</a></li>
             <li><a href="#"><i class="fas fa-file-alt"></i> Página</a></li>
+            <li><a href="#"><i class="fas fa-sitemap"></i> Menu</a></li>
             <li><a href="#"><i class="fas fa-images"></i> Carrusel</a></li>
             <li><a href="#"><i class="fas fa-calendar-alt"></i> Eventos</a></li>
             <li><a href="#"><i class="fas fa-star"></i> Calificaciones</a></li>
@@ -46,6 +48,78 @@
         </ul>
     </nav>
     <div class="contenedor_gris"></div>
+    <!----------------------------------------->
+    <!--|estructura_almacenamiento_de_pagina|-->
+    <!----------------------------------------->
+    <div class="menu-box">
+        <div class="accordion">
+            <h3>Páginas</h3>
+            <div class="accordion-content">
+                <div class="btn-group-top">
+                    <button id="btnBorrar" class="btn-delete">Borrar páginas</button>
+                    <button id="btnSeleccionar" class="btn-add">Seleccionar página</button>
+                </div>
+                <div class="page-list" id="listaPaginasMenu">
+                    <p>No hay páginas creadas.</p>
+                </div>
+                <button id="btnAñadir" class="btn-add" disabled>Añadir al menú</button>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------->
+    <!--|estructura_agregar_imagenes|-->
+    <!--------------------------------->
+    <div class="upload-box">
+        <div class="title-container">
+            <h2>Agregar Imagen</h2>
+            <button class="btn" id="btnGuardar">Guardar Imagen</button>
+        </div>
+        <input type="file" id="inputImagen" accept="image/*">
+    </div>
+    <!--------------------------------->
+    <!--|estructura_ajustar_opciones|-->
+    <!--------------------------------->
+    <div class="ajustes-box2">
+        <div class="header2">
+            <h3>Ajustar Opciones</h3>
+            <button class="btn-add2">Agregar página</button>
+        </div>
+        <div id="listaAjustes" class="lista-paginas2">
+            <p>No hay páginas agregadas al menú.</p>
+        </div>
+    </div>
+    <!------------------------>
+    <!--|estructura_submenu|-->
+    <!------------------------>
+    <div class="contenedor-submenu">
+        <h2>Crear Submenú</h2>
+        <label for="paginaPrincipal">Selecciona la página del menú:</label>
+        <select id="paginaPrincipal">
+            <option disabled selected>Selecciona una página del menú</option>
+        </select>
+        <div id="contenedorSubpaginas" class="contenedor-subpaginas">
+        </div>
+        <button id="btnCrearSubmenu">Crear Submenú</button>
+        <div id="submenusCreados" class="submenus-creados">
+            <strong>Submenús creados:</strong>
+            <ul id="listaSubmenus"></ul>
+        </div>
+    </div>
+    <!------------------------------------>
+    <!--|estructura_despliegue_de_tabla|-->
+    <!------------------------------------>
+    <table class="tabla-principal">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Opciones</th>
+                <th>Submenú</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-contenido">
+        </tbody>
+    </table>
     <!------------------------------>
     <!--|estructura_pie_de_pagina|-->
     <!------------------------------>
